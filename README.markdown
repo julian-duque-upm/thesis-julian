@@ -243,8 +243,6 @@ See the `/images` directory for architecture and data flow diagrams.
 - [x] CI/CD for containers
 - [x] Documentation & evidence
 - [x] Architecture diagrams
-- [ ] Results & discussion
-- [ ] Final thesis report
 
 ---
 
