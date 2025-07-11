@@ -12,4 +12,4 @@ Login to azure:
  - az login
 
 Generate the SAS Token with 30 days:
- - az iot hub generate-sas-token --hub-name iothub-thesis-julian --device-id esp32-gateway --login "HostName=iothub-thesis-julian.azure-devices.net;DeviceId=esp32-gateway;SharedAccessKey=LMtD5lKZZwXrCkK3QIOpo6nJNGEfyd+sXWiamV/3hX0=" --duration 2592000
+ - az iot hub generate-sas-token --device-id esp32-gateway --hub-name iothub-thesis-julian --duration 2592000
