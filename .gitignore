@@ -1,0 +1,4 @@
+mosquitto/data/
+mosquitto/logs/
+nodered/node_modules/
+*.log
