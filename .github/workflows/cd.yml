@@ -1,0 +1,28 @@
+name: Deploy to Raspberry Pi
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.PI_SSH_KEY }}
+
+      - name: Copy files to Pi (optional, if not using git pull)
+        run: |
+          # rsync -avz --exclude '.git*' ./ ${{ secrets.PI_USER }}@${{ secrets.PI_HOST }}:~/iot-stack/
+
+      - name: Deploy on Raspberry Pi
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.PI_USER }}@${{ secrets.PI_HOST }} "
+            cd ~/iot-stack &&
+            git pull &&
+            docker-compose up -d
+          "
