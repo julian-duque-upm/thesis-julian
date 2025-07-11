@@ -1,0 +1,40 @@
+version: "3.8"
+
+################################################################################
+#  Edge-stack for thesis demo
+#  ├─ Mosquitto   : local MQTT broker, accessible from host & other containers
+#  └─ Node-RED    : UDP-ingest + dashboard + Azure bridge
+################################################################################
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: thesis-mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"        # MQTT
+      - "9001:9001"        # Web-socket MQTT (optional dashboard plugins)
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/logs:/mosquitto/logs
+    networks: [thesis-net]
+
+  nodered:
+    image: nodered/node-red:latest
+    container_name: thesis-nodered
+    restart: unless-stopped
+    ports:
+      - "1880:1880"        # Node-RED editor / dashboard
+      - "12345:12345/udp"  # UDP telemetry from robot
+    volumes:
+      - ./nodered:/data    # flow, palette & dashboard persist here
+    environment:
+      - TZ=Europe/Madrid
+    depends_on:
+      - mosquitto
+    networks: [thesis-net]
+
+networks:
+  thesis-net:
+    driver: bridge

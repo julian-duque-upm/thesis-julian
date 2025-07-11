@@ -1,0 +1,695 @@
+[
+    {
+        "id": "4e29980d41ba6b65",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ef7d71ba5f6c8541",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "thesis-mosquitto",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "abc4133feb29440c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b949dc27e0a1662b",
+        "type": "ui_tab",
+        "name": "Dashboard",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2b3aad2c0f5b4d5d",
+        "type": "ui_group",
+        "name": "Motors PWM",
+        "tab": "b949dc27e0a1662b",
+        "order": 5,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c532884916fa2df0",
+        "type": "ui_group",
+        "name": "IR Sensor #1",
+        "tab": "b949dc27e0a1662b",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5d6e44a6c601bd4e",
+        "type": "ui_group",
+        "name": "IR Sensor #4",
+        "tab": "b949dc27e0a1662b",
+        "order": 4,
+        "disp": true,
+        "width": 1,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6fe70edf5ab18ce5",
+        "type": "ui_group",
+        "name": "IR Sensor #3",
+        "tab": "b949dc27e0a1662b",
+        "order": 3,
+        "disp": true,
+        "width": 1,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "84a968d1ac93a313",
+        "type": "ui_group",
+        "name": "IR Sensor #2",
+        "tab": "b949dc27e0a1662b",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f1816f461fb8dd4",
+        "type": "ui_group",
+        "name": "Motor RPMs",
+        "tab": "b949dc27e0a1662b",
+        "order": 6,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0fff676d02653cd4",
+        "type": "ui_group",
+        "name": "Right Motor RPM",
+        "tab": "b949dc27e0a1662b",
+        "order": 7,
+        "disp": true,
+        "width": 1,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f03c8bb2672c1cb1",
+        "type": "ui_group",
+        "name": "Steering Direction",
+        "tab": "b949dc27e0a1662b",
+        "order": 8,
+        "disp": true,
+        "width": 5,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "722399d66471c068",
+        "type": "ui_spacer",
+        "z": "4e29980d41ba6b65",
+        "name": "spacer",
+        "group": "6f1816f461fb8dd4",
+        "order": 2,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "a434668b36e6c4f7",
+        "type": "udp in",
+        "z": "4e29980d41ba6b65",
+        "name": "Robot UDP Listener",
+        "iface": "",
+        "port": "12345",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "utf8",
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "112b101ebf1091af",
+                "983b236c3d8e1057"
+            ]
+        ]
+    },
+    {
+        "id": "112b101ebf1091af",
+        "type": "debug",
+        "z": "4e29980d41ba6b65",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "983b236c3d8e1057",
+        "type": "json",
+        "z": "4e29980d41ba6b65",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "9350447205a5b714",
+                "7dc15bc814aac121",
+                "d5129d58167e0609",
+                "e7dd18fb8c65103b",
+                "bd950d226670e76d"
+            ]
+        ]
+    },
+    {
+        "id": "9350447205a5b714",
+        "type": "function",
+        "z": "4e29980d41ba6b65",
+        "name": "function 1",
+        "func": "msg.payload = msg.payload.pwm;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 240,
+        "wires": [
+            [
+                "0e44fe6bb945295e",
+                "76d553633989e5e5"
+            ]
+        ]
+    },
+    {
+        "id": "0e44fe6bb945295e",
+        "type": "debug",
+        "z": "4e29980d41ba6b65",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "76d553633989e5e5",
+        "type": "ui_gauge",
+        "z": "4e29980d41ba6b65",
+        "name": "",
+        "group": "2b3aad2c0f5b4d5d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1023",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 810,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "92b30ebcfe23fc5d",
+        "type": "ui_led",
+        "z": "4e29980d41ba6b65",
+        "order": 1,
+        "group": "c532884916fa2df0",
+        "width": 0,
+        "height": 0,
+        "label": "Left Outer",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 830,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f265cd207f88b8ec",
+        "type": "ui_led",
+        "z": "4e29980d41ba6b65",
+        "order": 2,
+        "group": "c532884916fa2df0",
+        "width": 0,
+        "height": 0,
+        "label": "Left Inner",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 830,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d7a90842aa7fde1f",
+        "type": "ui_led",
+        "z": "4e29980d41ba6b65",
+        "order": 2,
+        "group": "84a968d1ac93a313",
+        "width": 0,
+        "height": 0,
+        "label": "Right Inner",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 830,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "53f61588793eb1b5",
+        "type": "ui_led",
+        "z": "4e29980d41ba6b65",
+        "order": 1,
+        "group": "84a968d1ac93a313",
+        "width": 0,
+        "height": 0,
+        "label": "Right Outer",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 830,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "7dc15bc814aac121",
+        "type": "function",
+        "z": "4e29980d41ba6b65",
+        "name": "function 2",
+        "func": "// Assume msg.payload.ir = [LO, LI, RI, RO]\nreturn [\n  { payload: msg.payload.ir[0] ? \"1\" : \"0\" }, // LO\n  { payload: msg.payload.ir[1] ? \"1\" : \"0\" }, // LI\n  { payload: msg.payload.ir[2] ? \"1\" : \"0\" }, // RI\n  { payload: msg.payload.ir[3] ? \"1\" : \"0\" }  // RO\n];\n",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "92b30ebcfe23fc5d"
+            ],
+            [
+                "f265cd207f88b8ec"
+            ],
+            [
+                "d7a90842aa7fde1f"
+            ],
+            [
+                "53f61588793eb1b5"
+            ]
+        ]
+    },
+    {
+        "id": "f3891a8cb1bbf5bd",
+        "type": "ui_gauge",
+        "z": "4e29980d41ba6b65",
+        "name": "",
+        "group": "6f1816f461fb8dd4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "LM",
+        "label": "RPMs",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "800",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 830,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d5129d58167e0609",
+        "type": "function",
+        "z": "4e29980d41ba6b65",
+        "name": "function 3",
+        "func": "// Assume msg.payload.rpmL and msg.payload.rpmR contain the RPM values\nreturn [\n  { payload: msg.payload.rpmL }, // Output 1: Left RPM\n  { payload: msg.payload.rpmR }  // Output 2: Right RPM\n];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "f3891a8cb1bbf5bd"
+            ],
+            [
+                "d93e9fbf99a03155"
+            ]
+        ]
+    },
+    {
+        "id": "d93e9fbf99a03155",
+        "type": "ui_gauge",
+        "z": "4e29980d41ba6b65",
+        "name": "",
+        "group": "6f1816f461fb8dd4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "RM",
+        "label": "RPMs",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "800",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 830,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ab0b4263fc3202f3",
+        "type": "ui_text",
+        "z": "4e29980d41ba6b65",
+        "group": "f03c8bb2672c1cb1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Steering",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 840,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "e7dd18fb8c65103b",
+        "type": "function",
+        "z": "4e29980d41ba6b65",
+        "name": "function 4",
+        "func": "// Pass the direction string to the dashboard text node\nmsg.payload = msg.payload.state;  // e.g., \"Centered\", \"Left\", \"Right\"\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "ab0b4263fc3202f3"
+            ]
+        ]
+    },
+    {
+        "id": "723d679fd93cf874",
+        "type": "mqtt out",
+        "z": "4e29980d41ba6b65",
+        "name": "",
+        "topic": "robot/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ef7d71ba5f6c8541",
+        "x": 840,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "bd950d226670e76d",
+        "type": "function",
+        "z": "4e29980d41ba6b65",
+        "name": "function 5",
+        "func": "// Remove the 'ts' field from the payload\nif (msg.payload && typeof msg.payload === \"object\") {\n    // Create a shallow copy without 'ts'\n    let newPayload = Object.assign({}, msg.payload);\n    delete newPayload.ts;\n    msg.payload = newPayload;\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 100,
+        "wires": [
+            [
+                "723d679fd93cf874",
+                "ad6d1c98fd2a4dd1"
+            ]
+        ]
+    },
+    {
+        "id": "ad6d1c98fd2a4dd1",
+        "type": "debug",
+        "z": "4e29980d41ba6b65",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 40,
+        "wires": []
+    }
+]
