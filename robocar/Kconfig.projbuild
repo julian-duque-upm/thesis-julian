@@ -1,0 +1,33 @@
+menu "Robot Car Wi-Fi & UDP Configuration"
+
+    config ROBOT_WIFI_SSID1
+        string "Primary Wi-Fi SSID"
+        default "DIGIFIBRA-PLUS-X22D"
+
+    config ROBOT_WIFI_PASSWORD1
+        string "Primary Wi-Fi password"
+        default "hYYYt32Ak2"
+
+    config ROBOT_WIFI_SSID2
+        string "Secondary Wi-Fi SSID"
+        default "XD"
+
+    config ROBOT_WIFI_PASSWORD2
+        string "Secondary Wi-Fi password"
+        default "11111111"
+
+    config ROBOT_PI_IP
+        string "Raspberry Pi IP address"
+        default "192.168.1.143"
+        help
+            IPv4 address the ESP32 will send UDP packets to.
+            Change to 172.20.10.3 when you build for the other network.
+
+    config ROBOT_UDP_PORT
+        int "UDP port"
+        range 1 65535
+        default 12345
+        help
+            UDP destination port on the Raspberry Pi.
+
+endmenu
